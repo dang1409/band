@@ -1,0 +1,635 @@
+/* --chung-- */
+*{
+    margin:0;
+   
+    box-sizing:border-box;
+}
+/* them vao sau raw cac thuoc tinh ben duoi de thu gon code */
+.raw::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* tao hang  */
+.raw{
+    margin-left: -8px; 
+    margin-right: -8px;
+}
+/* tao cot */
+
+.col{
+    float:left;
+    padding-left:8px;
+    padding-right:8px;
+}
+
+/* tao so cot */
+
+.col-three{
+    width:33.333333%;
+}
+.col-half{
+    width:50% ;
+}
+.col-full{
+    width: 100%;
+}
+.mgb-16{
+    margin-bottom:16px;
+}
+
+.modal.open{
+    display: flex;
+}
+
+.clear{
+    clear:both;
+}
+
+.text-white{
+     color:#fff !important;
+}
+
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;  
+}
+
+#main{
+    /* position: relative; */
+}
+
+/* ----header---- */
+#heading{
+    background-color: black;
+    height: 46px;
+    position: fixed;
+    right :0;
+    left:0;
+    top:0;
+    /* do tac dung cua positon trong backgorinf in slide khien cho no 
+    noi cung hang voi header , khi keo qua se che mat header 
+    =>cach fix */
+    z-index: 1;
+}
+
+#heading .icon-heading{
+    font-size: 10px;
+}
+
+.mobile-btn{
+    /* mac cho block co tinh ke thua chieu ngang , dunng the float sex huy hoanf toan */
+    float:right;
+    padding:0 24px;
+    cursor: pointer;
+    
+}
+
+.mobile-btn .menu-icon-btn{
+    font-size: 14px;
+    color:#fff;
+    line-height: 46px;
+   
+}
+
+.mobile-btn:hover{
+    
+    background-color: #ccc;
+}
+
+.mobile-btn:hover .menu-icon-btn{
+    /* chi doi mau buttin nen chi css vao no */
+    color:black;
+}
+
+.search-btn{
+    /* mac cho block co tinh ke thua chieu ngang , dunng the float sex huy hoanf toan */
+    float:right;
+    padding:0 24px;
+    cursor: pointer;
+}
+
+/* tai sao khi them the cha thi moi css dc line-height */
+.search-btn .search-icon{
+    font-size: 14px;
+    color:#fff;
+    line-height: 46px;
+}
+
+.search-btn:hover{
+    /* chi doi mau buttin nen chi css vao no */
+    background-color: red;
+}
+
+.nav{
+    display: inline-block;
+    padding:0;
+}
+
+.nav li {
+    /* chuyen doi the li thanh dang inline-block */
+    /* lay more lam goc toa do */
+    position: relative;
+}
+
+.nav > li{
+    display: inline-block;
+}
+
+.nav > li > a{
+    line-height: 46px;
+    padding:0 24px;
+    text-transform: uppercase;
+    color:#fff;
+}
+
+.nav li a {
+    text-decoration: none;
+    /* viet hoa */
+   
+    
+}
+
+.nav > li:hover > a{
+    color:#000;
+    background-color: #ccc;
+    display:inline-block;
+    /* chuyen doi a thanh dang block */
+} 
+
+.nav li:hover .subnav{
+    display: block;
+}
+
+.nav .subnav{
+    list-style: none;
+    padding-left: 0;
+    position: absolute  ;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    display:none ;
+}
+
+.nav .subnav li{
+    min-width: 160px;
+}
+
+.nav .subnav li a{
+    color:#000;
+    line-height: 38px;
+    padding: 0 12px; 
+    display: block;
+}
+.nav .subnav li:hover a{
+    color:#000;
+    background-color: #ccc;
+    
+}
+
+/* ----slider---- */
+#slide{
+    /* đẩy xuống khỏi header */
+    margin-top:46px;
+    padding-top:50%;
+    /* nho them dau ' trong url */
+    background: url('../img/silde/chicago.jpg') top center/cover no-repeat;
+    /* van de nay xay ra mot loi 
+    - khi ma chen them chu o phan slide
+    - phan anh dang le chi dc them o phan padding nay bij keo xuong ca phan slide
+    - tu do gay ra chenh lẹch tỉ lệ ảnh  */
+    position: relative;
+    /* them vao position de ddua text len 1 loop cao hon */
+}
+
+#slide .text-content{
+    position:absolute;
+    bottom: 48px;;
+    left:50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.text-content .text-decristion,
+.text-content .text-heading{
+    color:#fff;
+}
+
+.text-content .text-heading{
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.text-content .text-decristion{
+    margin-top: 25px;
+    font-weight: 600; 
+}
+/* ----content---- */
+#content{
+    /* loi nay khien anh bi de len :)) */
+    /* height: 2000px; */
+}
+
+#content .section-content{
+    /* can le ow giua cho 1 div */
+    margin-left: auto;
+    margin-right: auto;
+    /* dat chieu dai theo kich thuoc da dinh */
+    width:768px;
+    /* cach nay de loai bo phan trang thua khi doi sang dang khac */
+    max-width: 100%;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-bottom: 112px;
+    
+}
+
+.section-content .section-heading{
+    text-align: center;
+    padding-top: 64px;
+    font-weight: 500;
+    /* do dan cach chu  */
+    letter-spacing: 4px;
+    font-size: 30px;
+}
+
+.section-content .section-sub-heading{
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 30px;
+    /* phong chu */
+    font-style: italic;
+    /* do trong suot */
+    opacity:0.6;
+}
+
+.section-content .about-text{
+    /* can le 2 ben  */
+    text-align: justify;
+    line-height: 1.4;
+}
+
+#content .members-list{
+    /* overflow: hidden; */
+    padding-bottom: 112px;
+    padding-top: 32px;
+}
+
+.members-list .members-name{
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.members-item{
+    
+    float: left;
+    /* display: inline; */
+    /* do dung float khien cho members list bij loi k the om dc member duoi-
+    vay phai khac phuc bang overflow:hidden hoac dung ham clear */
+    text-align: center;
+    width: calc(100%/3);
+}
+
+.members-list .members-img{
+    width: 153px;
+    /* ham bo goc */
+    border-radius: 4px;
+}
+
+/* tour-section */
+.tour-section{
+    background-color: #000;
+    /* height:846px; */
+    width: 100%;
+}
+
+.tour-section .ticket-list{
+    background-color: #fff;
+    padding:0;
+}
+
+.ticket-list li{
+    font-size:15px;
+    padding:10px 16px;
+    color:#757575;
+    list-style: none;
+    border: 1px solid #ccc;
+}
+
+.ticket-list .Sold-out{
+    background-color: #f44336;
+    padding:3px 8px;
+    margin:0 16px;
+}
+
+.ticket-list .quantily{
+    background-color: #000;
+    width: 25px;
+    height: 25px;
+    float: right;
+    border-radius: 50%;
+    line-height: 25px;
+    text-align: center;
+    margin-top: -3px;
+    margin-right: 16px;
+}
+/* place */
+.tour-section .place-list {
+    margin-top: 16px;
+}
+
+.place-list .place-item {
+    /* float: left; */
+    /* neu k chia 3 ra thi kich thuoc k du de float len tren */
+    /* width:calc(100%/3); */
+    /* anh dang bi to ra tran man hinh
+    => nen dung width = 100% de nos bang the chua no */
+    /* padding : 8px; */
+    
+}
+
+.place-list .place-img {
+    width:100%;
+    /* xoa khoang trong giua body va img do img co tc inline */
+    display: block;
+}
+
+.place-list .place-img:hover{
+    opacity:0.6;
+}
+
+.place-body {
+    background-color: #fff;
+    font-size: 15px;
+    padding:16px;
+}
+
+.place-body .place-heading {
+    padding: 15px 0;
+}
+
+.palce-sub-heading {
+    padding-bottom:15px;
+    color: black;
+    opacity: 0.6;
+}
+
+.place-about-text {
+    padding-bottom:15px ;
+    line-height: 1.4;
+}
+
+.place-btn {
+    padding:11px 16px;
+    
+    text-decoration: none;
+    color:#fff;
+    background-color: #000;
+    display: inline-block;
+ 
+    /* giup cho thanh dang line va khoi giup cho ngan cach vs cac khoi tren */
+    
+}
+
+.place-body .place-btn:hover {
+    background-color: #ccc;
+    color:#000;
+
+}
+
+.section-content .content-contact{
+    padding-top:32px;
+    padding-bottom: 32px;
+}
+
+.section-content .info-contact{
+    /* css thuoc tinh tren nay de no danh dau ca doan */
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.info-contact .info-icon{
+    width:30px;
+    /* do no co tinh chat inline nen phai them inline-block de dieu chinh padding */
+    display: inline-block;
+    
+}
+
+.info-contact .link-info{
+    color:#0223ec;
+    opacity:0.8;
+}
+
+.info-contact .link-info:hover{
+    opacity:1;
+}
+
+.form-control{
+    padding:11px;
+    width: 100%;
+    margin: 4px 4px 4px 0;
+    border:1px solid #ccc;
+}
+
+.send-btn{
+    text-transform: uppercase;
+    margin-top: 16px;
+    float: right;
+    margin-right: -3px;
+    font-size: 15px;
+    padding: 8px 16px;
+    background-color: black;
+    color: white;
+    border:none;
+}
+.send-btn:hover{
+    background-color: #ccc;
+    color:#000;
+}   
+
+.img .img-near-footer{
+    width: 100%;
+}
+
+
+#footer{
+
+ padding :64px 16px;
+    
+}
+
+.icon-list-footer{
+    text-align: center;
+    font-size: 24px;
+    /* phai css truc tiep vao a */
+}
+
+.icon-list-footer a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.icon-list-footer a:hover{
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.text-footer{
+    text-align: center;
+    padding:15px;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.text-link{
+    color:rgba(0, 0, 0, 0.4);
+}
+
+/* modal */
+.modal{
+    /* position: absolute; */
+    /* o day nen dung fixed de no bao quat luon cua so trinh duyet */
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.4);
+    top:0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+/* ticket-head */
+.modal .model-close{
+    position: absolute;
+    right:0;
+    top:0;
+    padding:16px 15px;
+}
+
+.modal .model-close:hover{
+    background-color: #ccc;
+}
+
+.modal .model-close:hover .ti-close{
+    color:black;
+}
+
+.model-close .ti-close{
+    color: #fff;
+}
+
+
+
+.modal .modal-ticket{
+    background-color: #fff;
+    position: relative;
+    width: 900px;
+    /* cai nay khi co man hinh lai se bij che khuat rat xau  */
+    /* - cach khac phuj la co dan no theo trinh duyet bang calc */
+    max-width: calc(100% - 32px);
+    min-height: 500px;
+    /* // tao chuyen dong qua ten chuyen dong - thuoc tinh - thoi gian hien thi */
+    animation: modalAnimation ease 0.5s;
+}
+
+.modal-ticket .modal-header{
+    width:100%;
+    height: 129px;
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #009688;
+    color: #fff;
+    letter-spacing: 3.5px;
+}
+
+.modal-header .icon-heading{
+    margin: 14px;
+}
+/* modal-body */
+
+.modal .modal-body{
+    padding: 16px;
+    
+}
+
+.modal-body .text-ticket{
+    font-size: 15px;
+    line-height: 1.5;
+    display: block;
+    padding-bottom: 12px;
+   
+}
+
+.modal-body #price-input{
+    margin-bottom: 24px;
+    width: 100%;
+    /* lamf mo vien */
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+.modal-body #email-input{
+    margin-bottom: 24px;
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+.modal-body .pay-btn{
+    width: 100% ;
+    padding:16px;
+    text-transform: uppercase;
+    background-color: #009688;
+    color: white;
+}
+
+.pay-btn .ti-check{
+    font-weight: 500;
+}
+/* --footer-- */
+.modal-ticket .modal-footer{
+    margin-top: 15px;
+}
+
+.modal-footer .text-footer{
+    float:right;
+    margin-right: 15px;
+    font-size: 15px;
+    
+}
+.text-footer .help-footer{
+    color: #2196F3;
+    font-size: 15px;
+}
+
+
+
+/* tao animation chuyen dong tren xuong cho buyticket */
+@keyframes modalAnimation{
+    from{
+       transform: translateY(-140px);
+       opacity: 0;
+    }
+    to{
+       transform:translateY(0) ;
+       opacity: 1;
+    }
+}
+
+/* -----ipad-mini----- */
+/* de xu ly van de lồi ra các khoảng trắng thừa không nên sử dụng media */
+ /* @media (max-width:768px) and (min-width:1024px) {
+    content .section-content {
+        margin-left: auto;
+        margin-right: auto;
+        width: 768px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+ } */
